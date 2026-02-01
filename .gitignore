@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts
+*.log
+*.tmp
+
+# Queue staging (generated files)
+queue/*.html
+queue/*.png
+
+# Local settings
+.claude/settings.local.json
+
+# Environment files
+.env
+.env.local

@@ -1,0 +1,48 @@
+{
+  "projectId": "3821108124163278528",
+  "projectTitle": "Terminal Blog Home Page",
+  "projectUrl": "https://stitch.withgoogle.com/project/3821108124163278528",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "DARK",
+    "customColor": "#5bec13",
+    "font": "SPACE_GROTESK",
+    "roundness": "ROUND_FOUR",
+    "saturation": 2
+  },
+  "screens": {
+    "home": "9c0e5d6be35e4c14805e7464952d478d",
+    "single-post": "879b16cce17a4261b5b0921305ace24b",
+    "category": "119816358b5b4612be56bc14a0e08470",
+    "about": "49158fb697624db385b86561eb424cdb",
+    "contact": "a62516037aa546a8985147b8c88052b8",
+    "lesson": "2a7f410035d04b9f80a74e1b72b5f5fe"
+  },
+  "wordpress": {
+    "themeDir": "terminal-blog",
+    "version": "1.0.1",
+    "patterns": [
+      "terminal-hero",
+      "post-card",
+      "terminal-window",
+      "error-404",
+      "search-results"
+    ]
+  },
+  "lastSync": "2026-02-01T20:15:00.000Z",
+  "loopHistory": [
+    {
+      "page": "404-error",
+      "status": "completed",
+      "pattern": "error-404.php",
+      "template": "404.html"
+    },
+    {
+      "page": "search-results",
+      "status": "completed",
+      "pattern": "search-results.php",
+      "template": "search.html"
+    }
+  ],
+  "nextInQueue": "author-profile"
+}

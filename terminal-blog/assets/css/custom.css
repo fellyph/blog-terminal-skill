@@ -1,0 +1,399 @@
+/**
+ * Terminal Blog - Custom Styles
+ *
+ * Additional styles for terminal effects and theme customizations.
+ *
+ * @package Terminal_Blog
+ * @since 1.0.0
+ */
+
+/* ----------------------------------------
+   CRT Scanline Effect (Full Page)
+   ---------------------------------------- */
+.crt-effect::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:
+		repeating-linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.15),
+			rgba(0, 0, 0, 0.15) 1px,
+			transparent 1px,
+			transparent 2px
+		),
+		repeating-linear-gradient(
+			90deg,
+			rgba(91, 236, 19, 0.02),
+			rgba(91, 236, 19, 0.02) 1px,
+			transparent 1px,
+			transparent 3px
+		);
+	pointer-events: none;
+	z-index: 9999;
+}
+
+/* CRT Subtle Effect (less intense) */
+.crt-effect-subtle::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: repeating-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.08),
+		rgba(0, 0, 0, 0.08) 1px,
+		transparent 1px,
+		transparent 2px
+	);
+	pointer-events: none;
+	z-index: 9999;
+}
+
+/* Scrolling Scanline Animation */
+@keyframes scanline-scroll {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(100vh);
+	}
+}
+
+.crt-scanline-scroll::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(
+		to bottom,
+		transparent,
+		rgba(91, 236, 19, 0.05),
+		transparent
+	);
+	animation: scanline-scroll 8s linear infinite;
+	pointer-events: none;
+	z-index: 9998;
+}
+
+/* ----------------------------------------
+   Phosphor Glow Text Effect
+   ---------------------------------------- */
+.phosphor-glow {
+	text-shadow:
+		0 0 5px rgba(91, 236, 19, 0.5),
+		0 0 10px rgba(91, 236, 19, 0.3),
+		0 0 20px rgba(91, 236, 19, 0.1);
+}
+
+.phosphor-glow-strong {
+	text-shadow:
+		0 0 5px rgba(91, 236, 19, 0.8),
+		0 0 15px rgba(91, 236, 19, 0.5),
+		0 0 30px rgba(91, 236, 19, 0.3);
+}
+
+/* Apply glow to headings */
+.has-primary-color,
+.wp-block-heading {
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+/* ----------------------------------------
+   Terminal Border Glow
+   ---------------------------------------- */
+.terminal-border {
+	border: 1px solid var(--wp--preset--color--primary, #5bec13);
+	box-shadow:
+		0 0 10px rgba(91, 236, 19, 0.2),
+		inset 0 0 10px rgba(91, 236, 19, 0.1);
+}
+
+.terminal-border:hover {
+	box-shadow:
+		0 0 20px rgba(91, 236, 19, 0.3),
+		inset 0 0 15px rgba(91, 236, 19, 0.15);
+}
+
+/* ----------------------------------------
+   Terminal Cursor Animation
+   ---------------------------------------- */
+.terminal-cursor::after {
+	content: "_";
+	animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+/* ----------------------------------------
+   Terminal Window Pattern Styles
+   ---------------------------------------- */
+.terminal-window {
+	border: 1px solid var(--wp--preset--color--border, #2e3928);
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.terminal-window-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+	background: var(--wp--preset--color--background-alt, #0a0f09);
+	border-bottom: 1px solid var(--wp--preset--color--border, #2e3928);
+}
+
+.terminal-window-buttons {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.terminal-window-button {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+.terminal-window-button--close {
+	background: var(--wp--preset--color--error, #ff4444);
+}
+
+.terminal-window-button--minimize {
+	background: var(--wp--preset--color--warning, #ffaa00);
+}
+
+.terminal-window-button--maximize {
+	background: var(--wp--preset--color--primary, #5bec13);
+}
+
+.terminal-window-content {
+	padding: 1rem;
+	background: var(--wp--preset--color--background, #050804);
+}
+
+/* ----------------------------------------
+   Post Card Hover Effects
+   ---------------------------------------- */
+.wp-block-post {
+	transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.wp-block-post:hover {
+	border-color: var(--wp--preset--color--primary, #5bec13);
+}
+
+/* ----------------------------------------
+   Navigation Enhancements
+   ---------------------------------------- */
+.wp-block-navigation .wp-block-navigation-item__content {
+	transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--primary, #5bec13);
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+/* ----------------------------------------
+   Button Enhancements
+   ---------------------------------------- */
+.wp-block-button__link {
+	transition: all 0.2s ease;
+}
+
+.wp-block-button__link:hover {
+	box-shadow: 0 0 15px rgba(91, 236, 19, 0.4);
+	transform: translateY(-1px);
+}
+
+.wp-block-button__link:active {
+	transform: translateY(0);
+}
+
+/* ----------------------------------------
+   Search Block Styling
+   ---------------------------------------- */
+.wp-block-search__input {
+	background: var(--wp--preset--color--background, #050804);
+	color: var(--wp--preset--color--foreground, #f6f8f6);
+	border-color: var(--wp--preset--color--border, #2e3928);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wp-block-search__input:focus {
+	border-color: var(--wp--preset--color--primary, #5bec13);
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.3);
+}
+
+.wp-block-search__input::placeholder {
+	color: var(--wp--preset--color--foreground-muted, #a8b4a8);
+	text-transform: uppercase;
+}
+
+/* ----------------------------------------
+   Code Block Enhancements
+   ---------------------------------------- */
+.wp-block-code code,
+.wp-block-preformatted pre {
+	color: var(--wp--preset--color--primary, #5bec13);
+	text-shadow: 0 0 2px rgba(91, 236, 19, 0.3);
+}
+
+/* ----------------------------------------
+   Separator Styling
+   ---------------------------------------- */
+.wp-block-separator {
+	border-color: var(--wp--preset--color--border, #2e3928);
+	opacity: 1;
+}
+
+.wp-block-separator.is-style-wide,
+.wp-block-separator.is-style-default {
+	border-bottom-style: dashed;
+}
+
+/* ----------------------------------------
+   Quote Block Styling
+   ---------------------------------------- */
+.wp-block-quote {
+	position: relative;
+}
+
+.wp-block-quote::before {
+	content: ">";
+	position: absolute;
+	left: -1rem;
+	color: var(--wp--preset--color--primary, #5bec13);
+	font-family: var(--wp--preset--font-family--monospace);
+}
+
+/* ----------------------------------------
+   Form Element Styling
+   ---------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	background: var(--wp--preset--color--background, #050804);
+	color: var(--wp--preset--color--foreground, #f6f8f6);
+	border: 1px solid var(--wp--preset--color--border, #2e3928);
+	border-radius: 0.25rem;
+	padding: 0.5rem 1rem;
+	font-family: var(--wp--preset--font-family--primary);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	border-color: var(--wp--preset--color--primary, #5bec13);
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.3);
+	outline: none;
+}
+
+/* ----------------------------------------
+   Comment Form Styling
+   ---------------------------------------- */
+.comment-form label {
+	text-transform: uppercase;
+	font-size: var(--wp--preset--font-size--small);
+	letter-spacing: 0.05em;
+	color: var(--wp--preset--color--foreground-muted, #a8b4a8);
+}
+
+.comment-form .submit {
+	background: transparent;
+	color: var(--wp--preset--color--primary, #5bec13);
+	border: 1px solid var(--wp--preset--color--primary, #5bec13);
+	padding: 0.5rem 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.comment-form .submit:hover {
+	background: var(--wp--preset--color--primary, #5bec13);
+	color: var(--wp--preset--color--background, #050804);
+	box-shadow: 0 0 10px rgba(91, 236, 19, 0.5);
+}
+
+/* ----------------------------------------
+   Pagination Styling
+   ---------------------------------------- */
+.wp-block-query-pagination-numbers .page-numbers {
+	padding: 0.25rem 0.75rem;
+	border: 1px solid var(--wp--preset--color--border, #2e3928);
+	border-radius: 0.25rem;
+	transition: all 0.2s ease;
+}
+
+.wp-block-query-pagination-numbers .page-numbers:hover,
+.wp-block-query-pagination-numbers .page-numbers.current {
+	border-color: var(--wp--preset--color--primary, #5bec13);
+	color: var(--wp--preset--color--primary, #5bec13);
+}
+
+/* ----------------------------------------
+   Accessibility Improvements
+   ---------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+	.has-primary-color {
+		text-shadow: none;
+	}
+
+	.wp-block-button__link:hover {
+		box-shadow: none;
+	}
+}
+
+/* ----------------------------------------
+   Print Styles
+   ---------------------------------------- */
+@media print {
+	body {
+		background: white;
+		color: black;
+	}
+
+	.has-primary-color,
+	.wp-block-heading {
+		color: black;
+		text-shadow: none;
+	}
+
+	a {
+		color: black;
+		text-decoration: underline;
+	}
+}
