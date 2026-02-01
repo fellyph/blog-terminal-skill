@@ -616,6 +616,7 @@
 		"comments-terminal",
 		"system-status",
 		"blinking-cursor",
-		"category-archive"
+		"category-archive",
+		"theme-toggle"
 	]
 }

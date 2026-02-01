@@ -102,6 +102,7 @@ terminal-blog/
 - [x] system-status.php - System metrics widget
 - [x] blinking-cursor.php - Animated cursor elements + CSS utilities
 - [x] category-archive.php - Terminal directory listing for archives
+- [x] theme-toggle.php - Dark/light mode toggle with localStorage
 
 ---
 
@@ -120,7 +121,7 @@ terminal-blog/
 - [x] **Comments Section** - Terminal-style threaded comments (Created comments-terminal.php pattern)
 
 ### Low Priority
-- [ ] **Dark/Light Mode Toggle** - Switch between dark terminal and "legacy" green-on-black
+- [x] **Dark/Light Mode Toggle** - Switch between dark terminal and light mode (Created theme-toggle.php pattern + JS)
 - [ ] **ASCII Art Header** - Optional ASCII logo pattern
 - [ ] **Boot Sequence Animation** - Intro animation for first-time visitors
 - [ ] **Command Palette** - Keyboard shortcut navigation (/)

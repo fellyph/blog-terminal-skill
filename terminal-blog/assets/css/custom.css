@@ -8,6 +8,140 @@
  */
 
 /* ----------------------------------------
+   Theme Toggle & Light Mode Support
+   ---------------------------------------- */
+
+/* CSS Custom Properties for theming */
+:root {
+	--theme-bg: #050804;
+	--theme-bg-alt: #0a0f09;
+	--theme-fg: #f6f8f6;
+	--theme-fg-muted: #a8b4a8;
+	--theme-primary: #5bec13;
+	--theme-primary-dark: #4bc410;
+	--theme-border: #2e3928;
+	--theme-glow: rgba(91, 236, 19, 0.5);
+	--theme-glow-subtle: rgba(91, 236, 19, 0.2);
+	--theme-scanline: rgba(0, 0, 0, 0.15);
+}
+
+/* Light theme overrides */
+[data-theme="light"] {
+	--theme-bg: #f6f8f6;
+	--theme-bg-alt: #e8ebe8;
+	--theme-fg: #050804;
+	--theme-fg-muted: #4a5a4a;
+	--theme-primary: #2e7d10;
+	--theme-primary-dark: #246a0d;
+	--theme-border: #a8b4a8;
+	--theme-glow: rgba(46, 125, 16, 0.3);
+	--theme-glow-subtle: rgba(46, 125, 16, 0.1);
+	--theme-scanline: rgba(0, 0, 0, 0.05);
+}
+
+/* Apply theme variables to body */
+body {
+	background-color: var(--theme-bg);
+	color: var(--theme-fg);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0;
+	background: transparent;
+	border: 1px solid var(--theme-primary, var(--wp--preset--color--primary, #5bec13));
+	border-radius: 0.125rem;
+	padding: 0.25rem 0.5rem;
+	font-family: var(--wp--preset--font-family--monospace);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	color: var(--theme-primary, var(--wp--preset--color--primary, #5bec13));
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+	background: var(--theme-glow-subtle, rgba(91, 236, 19, 0.1));
+	box-shadow: 0 0 10px var(--theme-glow, rgba(91, 236, 19, 0.5));
+}
+
+.theme-toggle:focus {
+	outline: 2px solid var(--theme-primary, var(--wp--preset--color--primary, #5bec13));
+	outline-offset: 2px;
+}
+
+.theme-toggle__label {
+	color: var(--theme-fg-muted, var(--wp--preset--color--foreground-muted, #a8b4a8));
+}
+
+.theme-toggle__value {
+	color: var(--theme-primary, var(--wp--preset--color--primary, #5bec13));
+	font-weight: 700;
+	min-width: 3.5em;
+	text-align: center;
+}
+
+/* Toggle animation */
+@keyframes theme-switch {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.theme-toggle.switching {
+	animation: theme-switch 0.3s ease;
+}
+
+/* Light mode specific adjustments */
+[data-theme="light"] .crt-effect::after,
+[data-theme="light"] .crt-effect-subtle::after {
+	background: repeating-linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.03),
+		rgba(0, 0, 0, 0.03) 1px,
+		transparent 1px,
+		transparent 2px
+	);
+}
+
+[data-theme="light"] .crt-scanline-scroll::before {
+	background: linear-gradient(
+		to bottom,
+		transparent,
+		rgba(46, 125, 16, 0.03),
+		transparent
+	);
+}
+
+[data-theme="light"] .phosphor-glow,
+[data-theme="light"] .has-primary-color,
+[data-theme="light"] .wp-block-heading {
+	text-shadow: none;
+}
+
+[data-theme="light"] .terminal-border {
+	box-shadow: 0 0 5px var(--theme-glow-subtle);
+}
+
+/* Wrapper positioning */
+.theme-toggle-wrapper {
+	padding: 0 !important;
+}
+
+/* ----------------------------------------
    CRT Scanline Effect (Full Page)
    ---------------------------------------- */
 .crt-effect::after {

@@ -1,7 +1,7 @@
 ---
-page: dark-light-toggle
+page: ascii-art-header
 ---
-A dark/light mode toggle pattern that allows users to switch between the default dark terminal theme and a "legacy" green-on-black or light mode variant.
+An optional ASCII art logo pattern that displays a stylized text-based header for the terminal blog.
 
 **DESIGN SYSTEM (REQUIRED):**
 
@@ -11,31 +11,38 @@ Dark cyberpunk terminal interface with CRT monitor aesthetic.
 ## Color Palette
 - Primary accent: #5bec13 (neon phosphor green)
 - Background: #050804 (void black)
-- Background Alt: #0a0f09
-- Foreground: #f6f8f6
 - Foreground Muted: #a8b4a8
 
 ## Component Specification
 
-**Toggle Button:**
-- Style: Terminal command button `[THEME: DARK]` / `[THEME: LIGHT]`
-- Position: Header area or floating corner
-- Border: 1px solid #5bec13
-- Animation: Subtle glow pulse on toggle
+**ASCII Art Block:**
+- Font: Monospace (system monospace or Space Grotesk)
+- Color: Primary green (#5bec13)
+- Line height: 1.0 (tight)
+- White-space: pre (preserve formatting)
+- Text shadow: Phosphor glow effect
 
-**Light Mode Colors (for reference):**
-- Background: #f6f8f6 (Muted Parchment)
-- Foreground: #050804 (Void Black)
-- Primary: #2e7d10 (Darker green for contrast)
-- Border: #a8b4a8
+**Example ASCII Art Styles:**
+```
+████████╗███████╗██████╗ ███╗   ███╗
+╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
+   ██║   █████╗  ██████╔╝██╔████╔██║
+   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
+   ██║   ███████╗██║  ██║██║ ╚═╝ ██║
+   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+```
 
-**Functionality:**
-- Uses CSS custom properties for theming
-- Saves preference to localStorage
-- Respects prefers-color-scheme media query
-- Toggle animation with smooth transition
+Or simpler style:
+```
+ _____                   _             _
+|_   _|__ _ __ _ __ ___ (_)_ __   __ _| |
+  | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | |
+  | |  __/ |  | | | | | | | | | | (_| | |
+  |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|
+```
 
 **Usage:**
-- Can be added to header template part
-- Works with system-status widget
-- Integrates with existing CRT effects
+- Hero section decoration
+- 404 page header
+- About page header
+- Loading/boot sequence screens

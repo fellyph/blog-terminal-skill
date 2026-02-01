@@ -83,6 +83,18 @@ function terminal_blog_scripts() {
 		array( 'terminal-blog-style' ),
 		wp_get_theme()->get( 'Version' )
 	);
+
+	// Enqueue theme toggle script
+	wp_enqueue_script(
+		'terminal-blog-theme-toggle',
+		get_template_directory_uri() . '/assets/js/theme-toggle.js',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		array(
+			'strategy' => 'defer',
+			'in_footer' => false, // Load in head for early theme application
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'terminal_blog_scripts' );
 
