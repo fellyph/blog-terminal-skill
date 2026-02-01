@@ -98,6 +98,7 @@ terminal-blog/
 - [x] error-404.php - 404 error page with terminal aesthetic
 - [x] search-results.php - Grep-style search results
 - [x] author-profile.php - Whoami-style author profile
+- [x] comments-terminal.php - IRC-style comments section
 
 ---
 
@@ -113,7 +114,7 @@ terminal-blog/
 - [x] **404 Page Enhancement** - "FILE_NOT_FOUND" terminal error screen (Created error-404.php pattern)
 - [x] **Search Results Page** - "grep" style search results display (Created search-results.php pattern)
 - [x] **Author Page Template** - User profile as "system user" output (Created author-profile.php pattern)
-- [ ] **Comments Section** - Terminal-style threaded comments
+- [x] **Comments Section** - Terminal-style threaded comments (Created comments-terminal.php pattern)
 
 ### Low Priority
 - [ ] **Dark/Light Mode Toggle** - Switch between dark terminal and "legacy" green-on-black

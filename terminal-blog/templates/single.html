@@ -108,43 +108,7 @@
 	</div>
 	<!-- /wp:query -->
 
-	<!-- wp:comments {"style":{"spacing":{"margin":{"top":"var:preset|spacing|70"}}}} -->
-	<div class="wp-block-comments">
-		<!-- wp:heading {"level":2,"style":{"typography":{"textTransform":"uppercase","fontSize":"1.25rem"}}} -->
-		<h2 class="wp-block-heading" style="font-size:1.25rem;text-transform:uppercase">// COMMENTS_SECTION</h2>
-		<!-- /wp:heading -->
-
-		<!-- wp:comments-title {"level":3,"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"medium"} /-->
-
-		<!-- wp:comment-template -->
-			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"border":{"bottom":{"color":"var:preset|color|border","width":"1px"}}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--border);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)">
-				<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-				<div class="wp-block-group">
-					<!-- wp:avatar {"size":32,"style":{"border":{"radius":"0.25rem"}}} /-->
-
-					<!-- wp:comment-author-name {"style":{"typography":{"textTransform":"uppercase"}},"textColor":"primary","fontSize":"small"} /-->
-
-					<!-- wp:comment-date {"style":{"typography":{"textTransform":"uppercase"}},"textColor":"foreground-muted","fontSize":"small"} /-->
-				</div>
-				<!-- /wp:group -->
-
-				<!-- wp:comment-content {"textColor":"foreground"} /-->
-
-				<!-- wp:comment-reply-link {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} /-->
-			</div>
-			<!-- /wp:group -->
-		<!-- /wp:comment-template -->
-
-		<!-- wp:comments-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
-			<!-- wp:comments-pagination-previous {"label":"[PREV]"} /-->
-			<!-- wp:comments-pagination-numbers /-->
-			<!-- wp:comments-pagination-next {"label":"[NEXT]"} /-->
-		<!-- /wp:comments-pagination -->
-
-		<!-- wp:post-comments-form /-->
-	</div>
-	<!-- /wp:comments -->
+	<!-- wp:pattern {"slug":"terminal-blog/comments-terminal"} /-->
 </main>
 <!-- /wp:group -->
 

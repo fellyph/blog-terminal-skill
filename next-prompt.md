@@ -1,7 +1,7 @@
 ---
-page: comments-section
+page: system-status-widget
 ---
-A terminal-style comments section with threaded replies displayed as a chat log or IRC-style conversation.
+A terminal-style system status widget/sidebar showing live-style metrics and system information, perfect for a footer or sidebar.
 
 **DESIGN SYSTEM (REQUIRED):**
 
@@ -15,46 +15,43 @@ Dark cyberpunk terminal interface with CRT monitor aesthetic, electric green acc
 - Foreground: #f6f8f6 (muted parchment)
 - Foreground muted: #a8b4a8 (terminal gray)
 - Border: #2e3928 (dark green-gray)
+- Success: #5bec13 (green)
+- Warning: #ffaa00 (amber)
+- Error: #ff4444 (red)
 
 ## Typography
 - Font: Space Grotesk, monospace fallback
-- Text transform: UPPERCASE for headers and labels
-- Letter spacing: 0.05em expanded tracking
-- Text shadow: 0 0 5px rgba(91, 236, 19, 0.5) phosphor glow
+- Text transform: UPPERCASE for all labels
+- Letter spacing: 0.05em
 
-## Components
-- Sharp-edged minimal buttons with green borders
-- Translucent containers with inner glow
-- Command-line style bracketed actions [REPLY] [REPORT]
-- Timestamps in terminal format
+**Widget Structure:**
 
-**Page Structure:**
+1. **Header Bar**
+   - "SYSTEM_STATUS" title
+   - Blinking indicator dot (green = online)
 
-1. **Comments Header**
-   - "> cat ./comments.log" command prompt
-   - Comment count: "FOUND: 12 ENTRIES"
+2. **Connection Status**
+   - "CONNECTION:" label
+   - Status: "ESTABLISHED" in green
+   - "SOCKET: 443/TLS"
+   - "PROTOCOL: HTTPS/2"
 
-2. **Comment Form** (at top)
-   - "> write ./comments.log --append" command
-   - Input fields styled as terminal inputs:
-     - "NAME:" input
-     - "EMAIL:" input (optional indicator)
-     - "MESSAGE:" textarea
-   - "[SUBMIT_COMMENT]" button
+3. **Performance Metrics**
+   - "LATENCY:" with value "42ms"
+   - "UPTIME:" with value "99.9%"
+   - "MEMORY:" with progress bar style "████████░░ 82%"
+   - "CPU_LOAD:" with value "0.42"
 
-3. **Comments List** - IRC/chat log style:
-   - Each comment as a log entry:
-     - Timestamp: "[2026-02-01 14:32:00]"
-     - Username in brackets: "<admin_user>"
-     - Comment text
-     - "[REPLY]" action link
-   - Nested replies indented with "└──" prefix
-   - Author comments highlighted with different border color
+4. **Server Info**
+   - "NODE:" with server identifier
+   - "REGION:" with location code
+   - "KERNEL:" with version number
 
-4. **Pagination** - If many comments:
-   - "SHOWING 1-10 OF 42 ENTRIES"
-   - "[LOAD_MORE]" button
+5. **Recent Activity Log** (compact)
+   - 3-4 lines of mini log entries
+   - Format: "[HH:MM] EVENT_TYPE: message"
+   - Examples: "[14:32] CACHE_HIT: /posts/", "[14:31] REQUEST: GET /api"
 
-5. **Empty State** - When no comments:
-   - "NO_ENTRIES_FOUND"
-   - "Be the first to initialize the comment log."
+6. **Footer**
+   - Last updated timestamp
+   - "REFRESH: AUTO" indicator

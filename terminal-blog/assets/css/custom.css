@@ -354,6 +354,141 @@ textarea:focus {
 }
 
 /* ----------------------------------------
+   Terminal Comments Styling
+   ---------------------------------------- */
+.terminal-comments .wp-block-comment-author-name {
+	font-family: var(--wp--preset--font-family--monospace);
+}
+
+.terminal-comments .wp-block-comment-author-name::before {
+	content: "<";
+	color: var(--wp--preset--color--foreground-muted, #a8b4a8);
+}
+
+.terminal-comments .wp-block-comment-author-name::after {
+	content: ">";
+	color: var(--wp--preset--color--foreground-muted, #a8b4a8);
+}
+
+.terminal-comments .wp-block-comment-content {
+	font-family: var(--wp--preset--font-family--primary);
+}
+
+.terminal-comments .comment-reply-link,
+.terminal-comments .wp-block-comment-reply-link a {
+	color: var(--wp--preset--color--primary, #5bec13);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: var(--wp--preset--font-size--small);
+	letter-spacing: 0.05em;
+}
+
+.terminal-comments .comment-reply-link::before,
+.terminal-comments .wp-block-comment-reply-link a::before {
+	content: "[";
+}
+
+.terminal-comments .comment-reply-link::after,
+.terminal-comments .wp-block-comment-reply-link a::after {
+	content: "]";
+}
+
+.terminal-comments .comment-reply-link:hover,
+.terminal-comments .wp-block-comment-reply-link a:hover {
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+/* Nested comment replies */
+.terminal-comments .children {
+	margin-left: 1.5rem;
+	padding-left: 1rem;
+	border-left: 1px dashed var(--wp--preset--color--border, #2e3928);
+}
+
+.terminal-comments .children .terminal-comment::before {
+	content: "└── ";
+	color: var(--wp--preset--color--foreground-muted, #a8b4a8);
+	font-family: var(--wp--preset--font-family--monospace);
+	position: absolute;
+	left: -1.5rem;
+}
+
+/* Author/Admin comment highlight */
+.terminal-comments .bypostauthor > .terminal-comment {
+	border-left: 2px solid var(--wp--preset--color--primary, #5bec13);
+}
+
+/* Comment form terminal styling */
+.wp-block-post-comments-form .comment-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.wp-block-post-comments-form .comment-form label {
+	display: block;
+	text-transform: uppercase;
+	font-size: var(--wp--preset--font-size--small);
+	letter-spacing: 0.05em;
+	color: var(--wp--preset--color--primary, #5bec13);
+	margin-bottom: 0.25rem;
+	font-family: var(--wp--preset--font-family--monospace);
+}
+
+.wp-block-post-comments-form .comment-form label::before {
+	content: "> ";
+}
+
+.wp-block-post-comments-form .comment-form .comment-form-comment label::after {
+	content: ":";
+}
+
+.wp-block-post-comments-form .comment-form input,
+.wp-block-post-comments-form .comment-form textarea {
+	width: 100%;
+	background: var(--wp--preset--color--background, #050804);
+	color: var(--wp--preset--color--foreground, #f6f8f6);
+	border: 1px solid var(--wp--preset--color--border, #2e3928);
+	border-radius: 0.25rem;
+	padding: 0.75rem 1rem;
+	font-family: var(--wp--preset--font-family--primary);
+}
+
+.wp-block-post-comments-form .comment-form input:focus,
+.wp-block-post-comments-form .comment-form textarea:focus {
+	border-color: var(--wp--preset--color--primary, #5bec13);
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.3);
+	outline: none;
+}
+
+.wp-block-post-comments-form .form-submit .submit {
+	background: transparent;
+	color: var(--wp--preset--color--primary, #5bec13);
+	border: 1px solid var(--wp--preset--color--primary, #5bec13);
+	border-radius: 0.25rem;
+	padding: 0.75rem 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-family: var(--wp--preset--font-family--primary);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.wp-block-post-comments-form .form-submit .submit::before {
+	content: "[";
+}
+
+.wp-block-post-comments-form .form-submit .submit::after {
+	content: "]";
+}
+
+.wp-block-post-comments-form .form-submit .submit:hover {
+	background: var(--wp--preset--color--primary, #5bec13);
+	color: var(--wp--preset--color--background, #050804);
+	box-shadow: 0 0 15px rgba(91, 236, 19, 0.4);
+}
+
+/* ----------------------------------------
    Accessibility Improvements
    ---------------------------------------- */
 @media (prefers-reduced-motion: reduce) {

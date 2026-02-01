@@ -20,17 +20,18 @@
   },
   "wordpress": {
     "themeDir": "terminal-blog",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "patterns": [
       "terminal-hero",
       "post-card",
       "terminal-window",
       "error-404",
       "search-results",
-      "author-profile"
+      "author-profile",
+      "comments-terminal"
     ]
   },
-  "lastSync": "2026-02-01T20:30:00.000Z",
+  "lastSync": "2026-02-01T20:45:00.000Z",
   "loopHistory": [
     {
       "page": "404-error",
@@ -49,7 +50,13 @@
       "status": "completed",
       "pattern": "author-profile.php",
       "template": "author.html"
+    },
+    {
+      "page": "comments-section",
+      "status": "completed",
+      "pattern": "comments-terminal.php",
+      "template": "single.html (updated)"
     }
   ],
-  "nextInQueue": "comments-section"
+  "nextInQueue": "system-status-widget"
 }

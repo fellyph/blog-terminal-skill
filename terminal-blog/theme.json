@@ -612,6 +612,7 @@
 		"terminal-window",
 		"error-404",
 		"search-results",
-		"author-profile"
+		"author-profile",
+		"comments-terminal"
 	]
 }
