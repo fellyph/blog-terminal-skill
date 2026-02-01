@@ -30,10 +30,11 @@
       "author-profile",
       "comments-terminal",
       "system-status",
-      "blinking-cursor"
+      "blinking-cursor",
+      "category-archive"
     ]
   },
-  "lastSync": "2026-02-01T21:15:00.000Z",
+  "lastSync": "2026-02-01T22:30:00.000Z",
   "loopHistory": [
     {
       "page": "404-error",
@@ -70,7 +71,13 @@
       "status": "completed",
       "pattern": "blinking-cursor.php",
       "template": "CSS utilities"
+    },
+    {
+      "page": "category-archive",
+      "status": "completed",
+      "pattern": "category-archive.php",
+      "template": "archive.html"
     }
   ],
-  "nextInQueue": "category-archive"
+  "nextInQueue": "dark-light-toggle"
 }

@@ -621,6 +621,120 @@ textarea:focus {
 }
 
 /* ----------------------------------------
+   Category Archive / Directory Listing
+   ---------------------------------------- */
+.terminal-directory-listing {
+	font-family: var(--wp--preset--font-family--monospace);
+}
+
+.terminal-directory-listing .directory-header {
+	background: linear-gradient(
+		to bottom,
+		rgba(91, 236, 19, 0.03) 0%,
+		transparent 100%
+	);
+}
+
+.terminal-directory-listing .directory-path {
+	font-family: var(--wp--preset--font-family--monospace);
+}
+
+/* File entry row hover effect */
+.terminal-directory-listing .file-entry {
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.terminal-directory-listing .file-entry:hover {
+	background-color: rgba(91, 236, 19, 0.03);
+	border-bottom-color: var(--wp--preset--color--primary, #5bec13);
+}
+
+/* File name link styling */
+.terminal-directory-listing .file-name a {
+	text-decoration: none;
+	transition: text-shadow 0.15s ease;
+}
+
+.terminal-directory-listing .file-entry:hover .file-name a {
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+/* File meta columns alignment */
+.terminal-directory-listing .file-meta-left {
+	min-width: 280px;
+	gap: 1.5rem;
+}
+
+.terminal-directory-listing .file-meta-left p {
+	margin: 0;
+	min-width: 70px;
+}
+
+/* File info section */
+.terminal-directory-listing .file-info {
+	flex: 1;
+	gap: 0;
+}
+
+/* File tags styling */
+.terminal-directory-listing .file-tags a {
+	background: rgba(91, 236, 19, 0.1);
+	border: 1px solid var(--wp--preset--color--border, #2e3928);
+	border-radius: 0.125rem;
+	padding: 0.125rem 0.5rem;
+	text-decoration: none;
+	transition: all 0.15s ease;
+}
+
+.terminal-directory-listing .file-tags a:hover {
+	border-color: var(--wp--preset--color--primary, #5bec13);
+	background: rgba(91, 236, 19, 0.2);
+}
+
+/* Empty directory state */
+.terminal-directory-listing .empty-directory {
+	background: rgba(255, 170, 0, 0.05);
+}
+
+/* Pagination in directory footer */
+.terminal-directory-listing .wp-block-query-pagination {
+	gap: 0.5rem;
+}
+
+.terminal-directory-listing .wp-block-query-pagination-numbers .page-numbers {
+	font-family: var(--wp--preset--font-family--monospace);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.terminal-directory-listing .file-entry {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+
+	.terminal-directory-listing .file-meta-left {
+		min-width: auto;
+		font-size: var(--wp--preset--font-size--x-small);
+	}
+
+	.terminal-directory-listing .file-info {
+		padding-left: 0;
+		width: 100%;
+	}
+
+	.terminal-directory-listing .file-meta-right {
+		width: 100%;
+		justify-content: flex-start;
+		margin-top: 0.5rem;
+	}
+
+	.terminal-directory-listing .directory-meta {
+		display: none;
+	}
+}
+
+/* ----------------------------------------
    Accessibility Improvements
    ---------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
