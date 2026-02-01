@@ -100,6 +100,7 @@ terminal-blog/
 - [x] author-profile.php - Whoami-style author profile
 - [x] comments-terminal.php - IRC-style comments section
 - [x] system-status.php - System metrics widget
+- [x] blinking-cursor.php - Animated cursor elements + CSS utilities
 
 ---
 
@@ -107,7 +108,7 @@ terminal-blog/
 
 ### High Priority
 - [x] **Enhanced CRT Overlay** - Add full-page scanline effect as a block pattern (Added to custom.css)
-- [ ] **Blinking Cursor Pattern** - Create a pattern with animated terminal cursor
+- [x] **Blinking Cursor Pattern** - Create a pattern with animated terminal cursor (Created blinking-cursor.php + CSS utilities)
 - [x] **System Status Widget** - Dynamic footer with "system metrics" (uptime, memory, etc.) (Created system-status.php pattern)
 - [ ] **Category Archive Improvements** - File listing grid with terminal-style metadata
 

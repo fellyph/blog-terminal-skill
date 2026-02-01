@@ -614,6 +614,7 @@
 		"search-results",
 		"author-profile",
 		"comments-terminal",
-		"system-status"
+		"system-status",
+		"blinking-cursor"
 	]
 }

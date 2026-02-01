@@ -123,20 +123,123 @@
 }
 
 /* ----------------------------------------
-   Terminal Cursor Animation
+   Terminal Cursor Animations
    ---------------------------------------- */
-.terminal-cursor::after {
-	content: "_";
-	animation: blink 1s step-end infinite;
-}
 
-@keyframes blink {
+/* Base blink animation */
+@keyframes cursor-blink {
 	0%, 100% {
 		opacity: 1;
 	}
 	50% {
 		opacity: 0;
 	}
+}
+
+/* Legacy class support */
+.terminal-cursor::after {
+	content: "_";
+	animation: cursor-blink 1s step-end infinite;
+	color: var(--wp--preset--color--primary, #5bec13);
+}
+
+/* Block Cursor - Full rectangle */
+.cursor-block {
+	display: inline-block;
+	width: 10px;
+	height: 1.2em;
+	background-color: var(--wp--preset--color--primary, #5bec13);
+	margin-left: 2px;
+	vertical-align: text-bottom;
+	animation: cursor-blink 1s step-end infinite;
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+.terminal-cursor-block .cursor-block {
+	display: inline-block;
+}
+
+/* Underscore Cursor - Classic terminal */
+.cursor-underscore {
+	color: var(--wp--preset--color--primary, #5bec13);
+	animation: cursor-blink 1s step-end infinite;
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+.terminal-cursor-underscore {
+	font-family: var(--wp--preset--font-family--monospace);
+	color: var(--wp--preset--color--primary, #5bec13);
+}
+
+/* Line Cursor - Thin vertical line */
+.cursor-line {
+	display: inline-block;
+	width: 2px;
+	height: 1em;
+	background-color: var(--wp--preset--color--primary, #5bec13);
+	margin-left: 2px;
+	vertical-align: text-bottom;
+	animation: cursor-blink 1s step-end infinite;
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+.terminal-cursor-line {
+	font-family: var(--wp--preset--font-family--monospace);
+	color: var(--wp--preset--color--primary, #5bec13);
+}
+
+/* Utility classes for adding cursors to any element */
+.has-cursor-block::after {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 1.2em;
+	background-color: var(--wp--preset--color--primary, #5bec13);
+	margin-left: 4px;
+	vertical-align: text-bottom;
+	animation: cursor-blink 1s step-end infinite;
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+.has-cursor-underscore::after {
+	content: "_";
+	color: var(--wp--preset--color--primary, #5bec13);
+	animation: cursor-blink 1s step-end infinite;
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+.has-cursor-line::after {
+	content: "";
+	display: inline-block;
+	width: 2px;
+	height: 1em;
+	background-color: var(--wp--preset--color--primary, #5bec13);
+	margin-left: 2px;
+	vertical-align: text-bottom;
+	animation: cursor-blink 1s step-end infinite;
+	box-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+/* Typing animation for text reveal effect */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+.typing-effect {
+	overflow: hidden;
+	white-space: nowrap;
+	animation: typing 2s steps(30, end);
+}
+
+.typing-effect.has-cursor-block::after,
+.typing-effect.has-cursor-underscore::after,
+.typing-effect.has-cursor-line::after {
+	animation: cursor-blink 1s step-end infinite;
 }
 
 /* ----------------------------------------
