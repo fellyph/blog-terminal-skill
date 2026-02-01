@@ -354,6 +354,35 @@ textarea:focus {
 }
 
 /* ----------------------------------------
+   System Status Widget
+   ---------------------------------------- */
+.system-status-widget {
+	max-width: 320px;
+}
+
+.status-indicator-online {
+	animation: status-blink 2s ease-in-out infinite;
+}
+
+@keyframes status-blink {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.system-status-widget .has-primary-color {
+	text-shadow: 0 0 5px rgba(91, 236, 19, 0.5);
+}
+
+/* ASCII Progress Bars */
+.system-status-widget .wp-block-group p span.has-primary-color {
+	letter-spacing: -0.1em;
+}
+
+/* ----------------------------------------
    Terminal Comments Styling
    ---------------------------------------- */
 .terminal-comments .wp-block-comment-author-name {

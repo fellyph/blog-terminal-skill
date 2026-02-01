@@ -613,6 +613,7 @@
 		"error-404",
 		"search-results",
 		"author-profile",
-		"comments-terminal"
+		"comments-terminal",
+		"system-status"
 	]
 }
