@@ -89,6 +89,7 @@ terminal-blog/
 - [x] search.html - Search results
 - [x] page-about.html - About page
 - [x] page-contact.html - Contact page
+- [x] author.html - Author archive page
 
 ### WordPress Patterns
 - [x] terminal-hero.php - Hero section
@@ -96,6 +97,7 @@ terminal-blog/
 - [x] terminal-window.php - Terminal window container
 - [x] error-404.php - 404 error page with terminal aesthetic
 - [x] search-results.php - Grep-style search results
+- [x] author-profile.php - Whoami-style author profile
 
 ---
 
@@ -110,7 +112,7 @@ terminal-blog/
 ### Medium Priority
 - [x] **404 Page Enhancement** - "FILE_NOT_FOUND" terminal error screen (Created error-404.php pattern)
 - [x] **Search Results Page** - "grep" style search results display (Created search-results.php pattern)
-- [ ] **Author Page Template** - User profile as "system user" output
+- [x] **Author Page Template** - User profile as "system user" output (Created author-profile.php pattern)
 - [ ] **Comments Section** - Terminal-style threaded comments
 
 ### Low Priority

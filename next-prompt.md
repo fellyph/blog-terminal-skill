@@ -1,7 +1,7 @@
 ---
-page: author-profile
+page: comments-section
 ---
-A terminal-style author/user profile page displaying the author as a "system user" with their biography, stats, and recent posts in a terminal output format.
+A terminal-style comments section with threaded replies displayed as a chat log or IRC-style conversation.
 
 **DESIGN SYSTEM (REQUIRED):**
 
@@ -18,39 +18,43 @@ Dark cyberpunk terminal interface with CRT monitor aesthetic, electric green acc
 
 ## Typography
 - Font: Space Grotesk, monospace fallback
-- Text transform: UPPERCASE for headers and navigation
+- Text transform: UPPERCASE for headers and labels
 - Letter spacing: 0.05em expanded tracking
 - Text shadow: 0 0 5px rgba(91, 236, 19, 0.5) phosphor glow
 
 ## Components
 - Sharp-edged minimal buttons with green borders
 - Translucent containers with inner glow
-- Command-line style bracketed navigation [LINK]
-- File listings with metadata (date, type, size)
-- Avatar displayed as ASCII art or within a terminal frame
-
-## Effects
-- CRT scanline overlay
-- Phosphor text glow
+- Command-line style bracketed actions [REPLY] [REPORT]
+- Timestamps in terminal format
 
 **Page Structure:**
 
-1. **Header** - Standard terminal navigation bar
-2. **User Info Section** - Display as "whoami" command output:
-   - "> whoami" command
-   - Username/display name
-   - Avatar in a terminal-styled frame
-   - Role/permissions (e.g., "ADMIN | AUTHOR | EDITOR")
-3. **Biography Section** - Display as "cat ~/.profile" output:
-   - Bio text formatted as a config file
-   - Website, social links as environment variables
-4. **Statistics Panel** - System-style metrics:
-   - Total posts count
-   - Total comments
-   - Member since date
-   - Last active timestamp
-5. **Recent Posts** - "ls -la ~/posts" style listing:
-   - File listing table format
-   - Permissions, date, title, category
-   - Links to each post
-6. **Footer** - Standard footer with status indicators
+1. **Comments Header**
+   - "> cat ./comments.log" command prompt
+   - Comment count: "FOUND: 12 ENTRIES"
+
+2. **Comment Form** (at top)
+   - "> write ./comments.log --append" command
+   - Input fields styled as terminal inputs:
+     - "NAME:" input
+     - "EMAIL:" input (optional indicator)
+     - "MESSAGE:" textarea
+   - "[SUBMIT_COMMENT]" button
+
+3. **Comments List** - IRC/chat log style:
+   - Each comment as a log entry:
+     - Timestamp: "[2026-02-01 14:32:00]"
+     - Username in brackets: "<admin_user>"
+     - Comment text
+     - "[REPLY]" action link
+   - Nested replies indented with "└──" prefix
+   - Author comments highlighted with different border color
+
+4. **Pagination** - If many comments:
+   - "SHOWING 1-10 OF 42 ENTRIES"
+   - "[LOAD_MORE]" button
+
+5. **Empty State** - When no comments:
+   - "NO_ENTRIES_FOUND"
+   - "Be the first to initialize the comment log."
