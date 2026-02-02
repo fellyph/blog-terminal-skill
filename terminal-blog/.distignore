@@ -1,0 +1,13 @@
+# Exclude from distribution zip
+.distignore
+.git
+.gitignore
+.editorconfig
+.eslintrc
+.stylelintrc
+node_modules
+package.json
+package-lock.json
+CLAUDE.md
+*.log
+*.map
