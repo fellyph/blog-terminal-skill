@@ -4,11 +4,12 @@
  * Handles dark/light mode switching with localStorage persistence
  * and prefers-color-scheme support.
  *
- * @package Terminal_Blog
  * @since 1.0.0
  */
 
-(function () {
+/* global localStorage */
+
+( function () {
 	'use strict';
 
 	const STORAGE_KEY = 'terminal-blog-theme';
@@ -21,13 +22,16 @@
 	 */
 	function getPreferredTheme() {
 		// Check localStorage first
-		const stored = localStorage.getItem(STORAGE_KEY);
-		if (stored === DARK_THEME || stored === LIGHT_THEME) {
+		const stored = localStorage.getItem( STORAGE_KEY );
+		if ( stored === DARK_THEME || stored === LIGHT_THEME ) {
 			return stored;
 		}
 
 		// Check system preference
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+		if (
+			window.matchMedia &&
+			window.matchMedia( '(prefers-color-scheme: light)' ).matches
+		) {
 			return LIGHT_THEME;
 		}
 
@@ -37,52 +41,55 @@
 
 	/**
 	 * Apply theme to the document
+	 *
+	 * @param {string} theme - The theme to apply ('dark' or 'light')
 	 */
-	function applyTheme(theme) {
-		document.documentElement.setAttribute('data-theme', theme);
+	function applyTheme( theme ) {
+		document.documentElement.setAttribute( 'data-theme', theme );
 
 		// Update all toggle buttons
-		const toggles = document.querySelectorAll('.theme-toggle');
-		toggles.forEach(function (toggle) {
-			toggle.setAttribute('data-theme', theme);
-			const valueEl = toggle.querySelector('.theme-toggle__value');
-			if (valueEl) {
+		const toggles = document.querySelectorAll( '.theme-toggle' );
+		toggles.forEach( function ( toggle ) {
+			toggle.setAttribute( 'data-theme', theme );
+			const valueEl = toggle.querySelector( '.theme-toggle__value' );
+			if ( valueEl ) {
 				valueEl.textContent = theme.toUpperCase();
 			}
-		});
+		} );
 	}
 
 	/**
 	 * Toggle between themes
 	 */
 	function toggleTheme() {
-		const current = document.documentElement.getAttribute('data-theme') || DARK_THEME;
+		const current =
+			document.documentElement.getAttribute( 'data-theme' ) || DARK_THEME;
 		const next = current === DARK_THEME ? LIGHT_THEME : DARK_THEME;
 
 		// Save preference
-		localStorage.setItem(STORAGE_KEY, next);
+		localStorage.setItem( STORAGE_KEY, next );
 
 		// Apply with animation
-		const toggles = document.querySelectorAll('.theme-toggle');
-		toggles.forEach(function (toggle) {
-			toggle.classList.add('switching');
-			setTimeout(function () {
-				toggle.classList.remove('switching');
-			}, 300);
-		});
+		const toggles = document.querySelectorAll( '.theme-toggle' );
+		toggles.forEach( function ( toggle ) {
+			toggle.classList.add( 'switching' );
+			setTimeout( function () {
+				toggle.classList.remove( 'switching' );
+			}, 300 );
+		} );
 
-		applyTheme(next);
+		applyTheme( next );
 
 		// Announce change for screen readers
-		const announcement = document.createElement('div');
-		announcement.setAttribute('role', 'status');
-		announcement.setAttribute('aria-live', 'polite');
+		const announcement = document.createElement( 'div' );
+		announcement.setAttribute( 'role', 'status' );
+		announcement.setAttribute( 'aria-live', 'polite' );
 		announcement.className = 'sr-only';
 		announcement.textContent = 'Theme changed to ' + next + ' mode';
-		document.body.appendChild(announcement);
-		setTimeout(function () {
+		document.body.appendChild( announcement );
+		setTimeout( function () {
 			announcement.remove();
-		}, 1000);
+		}, 1000 );
 	}
 
 	/**
@@ -90,23 +97,28 @@
 	 */
 	function init() {
 		// Apply initial theme immediately (before DOM ready for flash prevention)
-		applyTheme(getPreferredTheme());
+		applyTheme( getPreferredTheme() );
 
 		// Set up toggle button handlers when DOM is ready
-		if (document.readyState === 'loading') {
-			document.addEventListener('DOMContentLoaded', setupToggleHandlers);
+		if ( document.readyState === 'loading' ) {
+			document.addEventListener(
+				'DOMContentLoaded',
+				setupToggleHandlers
+			);
 		} else {
 			setupToggleHandlers();
 		}
 
 		// Listen for system preference changes
-		if (window.matchMedia) {
-			window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
-				// Only auto-switch if user hasn't manually set a preference
-				if (!localStorage.getItem(STORAGE_KEY)) {
-					applyTheme(e.matches ? LIGHT_THEME : DARK_THEME);
-				}
-			});
+		if ( window.matchMedia ) {
+			window
+				.matchMedia( '(prefers-color-scheme: light)' )
+				.addEventListener( 'change', function ( e ) {
+					// Only auto-switch if user hasn't manually set a preference
+					if ( ! localStorage.getItem( STORAGE_KEY ) ) {
+						applyTheme( e.matches ? LIGHT_THEME : DARK_THEME );
+					}
+				} );
 		}
 	}
 
@@ -114,23 +126,23 @@
 	 * Set up click handlers for toggle buttons
 	 */
 	function setupToggleHandlers() {
-		const toggles = document.querySelectorAll('.theme-toggle');
-		toggles.forEach(function (toggle) {
-			toggle.addEventListener('click', toggleTheme);
+		const toggles = document.querySelectorAll( '.theme-toggle' );
+		toggles.forEach( function ( toggle ) {
+			toggle.addEventListener( 'click', toggleTheme );
 
 			// Keyboard support
-			toggle.addEventListener('keydown', function (e) {
-				if (e.key === 'Enter' || e.key === ' ') {
+			toggle.addEventListener( 'keydown', function ( e ) {
+				if ( e.key === 'Enter' || e.key === ' ' ) {
 					e.preventDefault();
 					toggleTheme();
 				}
-			});
-		});
+			} );
+		} );
 
 		// Re-apply theme to update button states
-		applyTheme(getPreferredTheme());
+		applyTheme( getPreferredTheme() );
 	}
 
 	// Initialize immediately
 	init();
-})();
+} )();
