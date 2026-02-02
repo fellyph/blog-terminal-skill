@@ -755,6 +755,145 @@ textarea:focus {
 }
 
 /* ----------------------------------------
+   ASCII Art Header
+   ---------------------------------------- */
+.ascii-art-header {
+	overflow-x: auto;
+	text-align: center;
+}
+
+.ascii-art {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0;
+	font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+	color: var(--theme-primary, var(--wp--preset--color--primary, #5bec13));
+	background: transparent;
+	border: none;
+	line-height: 1.1;
+	white-space: pre;
+	text-align: left;
+	overflow: visible;
+	text-shadow:
+		0 0 5px var(--theme-glow, rgba(91, 236, 19, 0.5)),
+		0 0 10px var(--theme-glow-subtle, rgba(91, 236, 19, 0.2));
+}
+
+/* Large ASCII art (full banner) */
+.ascii-art--large {
+	font-size: clamp(0.35rem, 1.2vw, 0.75rem);
+	letter-spacing: -0.05em;
+}
+
+/* Medium ASCII art (compact logo) */
+.ascii-art--medium {
+	font-size: clamp(0.6rem, 2vw, 1.2rem);
+	letter-spacing: 0;
+}
+
+/* Small ASCII art (figlet style) */
+.ascii-art--small {
+	font-size: clamp(0.4rem, 1.5vw, 0.65rem);
+	letter-spacing: -0.02em;
+}
+
+/* Hover animation */
+.ascii-art-header:hover .ascii-art {
+	text-shadow:
+		0 0 10px var(--theme-glow, rgba(91, 236, 19, 0.8)),
+		0 0 20px var(--theme-glow-subtle, rgba(91, 236, 19, 0.4)),
+		0 0 30px var(--theme-glow-subtle, rgba(91, 236, 19, 0.2));
+	transition: text-shadow 0.3s ease;
+}
+
+/* Compact variant - hide on small screens */
+.ascii-art-header--compact {
+	display: none;
+}
+
+/* Simple variant - hide by default, show on very small screens */
+.ascii-art-header--simple {
+	display: none;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+	.ascii-art-header:not(.ascii-art-header--compact):not(.ascii-art-header--simple) {
+		display: none;
+	}
+	.ascii-art-header--compact {
+		display: block;
+	}
+}
+
+@media (max-width: 500px) {
+	.ascii-art-header--compact {
+		display: none;
+	}
+	.ascii-art-header--simple {
+		display: block;
+	}
+	.ascii-art--small {
+		font-size: 0.35rem;
+	}
+}
+
+/* Light mode adjustments */
+[data-theme="light"] .ascii-art {
+	text-shadow:
+		0 0 2px var(--theme-glow, rgba(46, 125, 16, 0.3));
+}
+
+[data-theme="light"] .ascii-art-header:hover .ascii-art {
+	text-shadow:
+		0 0 5px var(--theme-glow, rgba(46, 125, 16, 0.5));
+}
+
+/* Animation for boot sequence effect */
+@keyframes ascii-flicker {
+	0%, 100% {
+		opacity: 1;
+	}
+	92% {
+		opacity: 1;
+	}
+	93% {
+		opacity: 0.8;
+	}
+	94% {
+		opacity: 1;
+	}
+	96% {
+		opacity: 0.9;
+	}
+	97% {
+		opacity: 1;
+	}
+}
+
+.ascii-art--animated {
+	animation: ascii-flicker 4s ease-in-out infinite;
+}
+
+/* Scanline effect specifically for ASCII art */
+.ascii-art-header--scanlines .ascii-art::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: repeating-linear-gradient(
+		0deg,
+		transparent,
+		transparent 1px,
+		rgba(0, 0, 0, 0.1) 1px,
+		rgba(0, 0, 0, 0.1) 2px
+	);
+	pointer-events: none;
+}
+
+/* ----------------------------------------
    Category Archive / Directory Listing
    ---------------------------------------- */
 .terminal-directory-listing {

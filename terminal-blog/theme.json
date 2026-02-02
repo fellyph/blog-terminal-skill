@@ -617,6 +617,7 @@
 		"system-status",
 		"blinking-cursor",
 		"category-archive",
-		"theme-toggle"
+		"theme-toggle",
+		"ascii-art-header"
 	]
 }

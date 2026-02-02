@@ -1,7 +1,7 @@
 ---
-page: ascii-art-header
+page: boot-sequence
 ---
-An optional ASCII art logo pattern that displays a stylized text-based header for the terminal blog.
+A boot sequence animation pattern that displays a terminal startup sequence for first-time visitors or page transitions.
 
 **DESIGN SYSTEM (REQUIRED):**
 
@@ -15,34 +15,39 @@ Dark cyberpunk terminal interface with CRT monitor aesthetic.
 
 ## Component Specification
 
-**ASCII Art Block:**
-- Font: Monospace (system monospace or Space Grotesk)
-- Color: Primary green (#5bec13)
-- Line height: 1.0 (tight)
-- White-space: pre (preserve formatting)
-- Text shadow: Phosphor glow effect
+**Boot Sequence Container:**
+- Full viewport overlay
+- Background: #050804
+- Z-index: 10000 (above all content)
+- Fade out after animation completes
 
-**Example ASCII Art Styles:**
+**Boot Text Lines:**
+- Font: Monospace
+- Color: Primary green with phosphor glow
+- Typing animation effect
+- Sequential line appearance
+
+**Example Boot Sequence:**
 ```
-████████╗███████╗██████╗ ███╗   ███╗
-╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
-   ██║   █████╗  ██████╔╝██╔████╔██║
-   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
-   ██║   ███████╗██║  ██║██║ ╚═╝ ██║
-   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+[BIOS] Initializing system...
+[OK] Memory check: 640K conventional
+[OK] Loading TERMINAL_OS v2.0.26
+[OK] Mounting /dev/blog
+[OK] Network interface: CONNECTED
+[OK] Display adapter: CRT_PHOSPHOR_GREEN
+
+TERMINAL_BLOG ready.
+Type 'help' for available commands.
+
+> _
 ```
 
-Or simpler style:
-```
- _____                   _             _
-|_   _|__ _ __ _ __ ___ (_)_ __   __ _| |
-  | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | |
-  | |  __/ |  | | | | | | | | | | (_| | |
-  |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|
-```
+**Animation Timing:**
+- Each line: 50-100ms delay
+- Typing effect: 30ms per character
+- Total duration: ~3 seconds
+- Skip on click/keypress
 
-**Usage:**
-- Hero section decoration
-- 404 page header
-- About page header
-- Loading/boot sequence screens
+**Storage:**
+- Use sessionStorage to show once per session
+- Option to replay via command palette

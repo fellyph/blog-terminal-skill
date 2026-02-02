@@ -103,6 +103,7 @@ terminal-blog/
 - [x] blinking-cursor.php - Animated cursor elements + CSS utilities
 - [x] category-archive.php - Terminal directory listing for archives
 - [x] theme-toggle.php - Dark/light mode toggle with localStorage
+- [x] ascii-art-header.php - ASCII art banner with responsive variants
 
 ---
 
@@ -122,7 +123,7 @@ terminal-blog/
 
 ### Low Priority
 - [x] **Dark/Light Mode Toggle** - Switch between dark terminal and light mode (Created theme-toggle.php pattern + JS)
-- [ ] **ASCII Art Header** - Optional ASCII logo pattern
+- [x] **ASCII Art Header** - Optional ASCII logo pattern (Created ascii-art-header.php with 3 variants)
 - [ ] **Boot Sequence Animation** - Intro animation for first-time visitors
 - [ ] **Command Palette** - Keyboard shortcut navigation (/)
 
