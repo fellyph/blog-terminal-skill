@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Post Card
- * Slug: terminal-blog/post-card
+ * Slug: terminal-blog-dev/post-card
  * Categories: posts
  * Keywords: post, card, blog
  * Description: A terminal-style post card with metadata.

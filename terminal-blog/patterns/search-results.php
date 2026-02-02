@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Search Results - Grep Style
- * Slug: terminal-blog/search-results
+ * Slug: terminal-blog-dev/search-results
  * Categories: featured
  * Keywords: search, results, grep
  * Description: A terminal-style search results display with grep aesthetic.

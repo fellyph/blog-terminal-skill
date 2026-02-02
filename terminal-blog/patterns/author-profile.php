@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Author Profile - Terminal Style
- * Slug: terminal-blog/author-profile
+ * Slug: terminal-blog-dev/author-profile
  * Categories: featured
  * Keywords: author, profile, user, whoami
  * Description: A terminal-style author profile with whoami command aesthetic.

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: System Status Widget
- * Slug: terminal-blog/system-status
+ * Slug: terminal-blog-dev/system-status
  * Categories: featured, footer
  * Keywords: status, widget, metrics, system
  * Description: A terminal-style system status widget with metrics and activity log.

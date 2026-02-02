@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Category Archive
- * Slug: terminal-blog/category-archive
+ * Slug: terminal-blog-dev/category-archive
  * Categories: query
  * Keywords: archive, category, listing, terminal, directory
  * Block Types: core/query

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Blinking Cursor
- * Slug: terminal-blog/blinking-cursor
+ * Slug: terminal-blog-dev/blinking-cursor
  * Categories: text
  * Keywords: cursor, blink, terminal, animation
  * Description: Decorative blinking cursor elements for terminal aesthetic.

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments - Terminal Style
- * Slug: terminal-blog/comments-terminal
+ * Slug: terminal-blog-dev/comments-terminal
  * Categories: featured
  * Keywords: comments, discussion, terminal, irc
  * Description: A terminal-style comments section with IRC/chat log aesthetic.

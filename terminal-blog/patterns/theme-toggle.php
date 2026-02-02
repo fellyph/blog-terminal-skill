@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Theme Toggle
- * Slug: terminal-blog/theme-toggle
+ * Slug: terminal-blog-dev/theme-toggle
  * Categories: header
  * Keywords: theme, toggle, dark, light, mode, switch
  * Description: Dark/light mode toggle button with terminal aesthetic.

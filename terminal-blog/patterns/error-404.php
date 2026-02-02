@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Error 404 - File Not Found
- * Slug: terminal-blog/error-404
+ * Slug: terminal-blog-dev/error-404
  * Categories: featured
  * Keywords: 404, error, not found
  * Description: A terminal-style error page with retro CRT aesthetics.

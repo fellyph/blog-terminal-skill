@@ -2,7 +2,7 @@
 /**
  * Terminal Blog Theme functions and definitions
  *
- * @package Terminal_Blog
+ * @package Terminal_Blog_Dev
  * @since 1.0.0
  */
 
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Theme setup
  */
-function terminal_blog_setup() {
+function terminal_blog_dev_setup() {
 	// Add support for block styles
 	add_theme_support( 'wp-block-styles' );
 
@@ -62,15 +62,15 @@ function terminal_blog_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'terminal_blog_setup' );
+add_action( 'after_setup_theme', 'terminal_blog_dev_setup' );
 
 /**
  * Enqueue scripts and styles
  */
-function terminal_blog_scripts() {
+function terminal_blog_dev_scripts() {
 	// Enqueue main stylesheet
 	wp_enqueue_style(
-		'terminal-blog-style',
+		'terminal-blog-dev-style',
 		get_stylesheet_uri(),
 		array(),
 		wp_get_theme()->get( 'Version' )
@@ -78,15 +78,15 @@ function terminal_blog_scripts() {
 
 	// Enqueue custom styles
 	wp_enqueue_style(
-		'terminal-blog-custom',
+		'terminal-blog-dev-custom',
 		get_template_directory_uri() . '/assets/css/custom.css',
-		array( 'terminal-blog-style' ),
+		array( 'terminal-blog-dev-style' ),
 		wp_get_theme()->get( 'Version' )
 	);
 
 	// Enqueue theme toggle script
 	wp_enqueue_script(
-		'terminal-blog-theme-toggle',
+		'terminal-blog-dev-theme-toggle',
 		get_template_directory_uri() . '/assets/js/theme-toggle.js',
 		array(),
 		wp_get_theme()->get( 'Version' ),
@@ -96,12 +96,12 @@ function terminal_blog_scripts() {
 		)
 	);
 }
-add_action( 'wp_enqueue_scripts', 'terminal_blog_scripts' );
+add_action( 'wp_enqueue_scripts', 'terminal_blog_dev_scripts' );
 
 /**
  * Add custom CSS for terminal effects
  */
-function terminal_blog_custom_css() {
+function terminal_blog_dev_custom_css() {
 	$custom_css = "
 		/* Terminal glow effect */
 		.has-primary-color {
@@ -181,36 +181,36 @@ function terminal_blog_custom_css() {
 		}
 	";
 
-	wp_add_inline_style( 'terminal-blog-style', $custom_css );
+	wp_add_inline_style( 'terminal-blog-dev-style', $custom_css );
 }
-add_action( 'wp_enqueue_scripts', 'terminal_blog_custom_css' );
+add_action( 'wp_enqueue_scripts', 'terminal_blog_dev_custom_css' );
 
 /**
  * Register block patterns category
  */
-function terminal_blog_register_pattern_category() {
+function terminal_blog_dev_register_pattern_category() {
 	register_block_pattern_category(
-		'terminal-blog',
+		'terminal-blog-dev',
 		array(
-			'label'       => __( 'Terminal Blog', 'terminal-blog' ),
-			'description' => __( 'Terminal-themed patterns for the Terminal Blog theme.', 'terminal-blog' ),
+			'label'       => __( 'Terminal Blog Dev', 'terminal-blog-dev' ),
+			'description' => __( 'Terminal-themed patterns for the Terminal Blog Dev theme.', 'terminal-blog-dev' ),
 		)
 	);
 }
-add_action( 'init', 'terminal_blog_register_pattern_category' );
+add_action( 'init', 'terminal_blog_dev_register_pattern_category' );
 
 /**
  * Modify excerpt length
  */
-function terminal_blog_excerpt_length( $length ) {
+function terminal_blog_dev_excerpt_length( $length ) {
 	return 25;
 }
-add_filter( 'excerpt_length', 'terminal_blog_excerpt_length' );
+add_filter( 'excerpt_length', 'terminal_blog_dev_excerpt_length' );
 
 /**
  * Modify excerpt more string
  */
-function terminal_blog_excerpt_more( $more ) {
+function terminal_blog_dev_excerpt_more( $more ) {
 	return '...';
 }
-add_filter( 'excerpt_more', 'terminal_blog_excerpt_more' );
+add_filter( 'excerpt_more', 'terminal_blog_dev_excerpt_more' );

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Terminal Window
- * Slug: terminal-blog/terminal-window
+ * Slug: terminal-blog-dev/terminal-window
  * Categories: featured
  * Keywords: terminal, window, code
  * Description: A styled terminal window container.

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Terminal Hero
- * Slug: terminal-blog/terminal-hero
+ * Slug: terminal-blog-dev/terminal-hero
  * Categories: featured, banner
  * Keywords: hero, banner, terminal
  * Description: A terminal-style hero section with title and call to action.
