@@ -580,10 +580,30 @@ button.wp-block-search__button {
 /* ----------------------------------------
    Code Block Enhancements
    ---------------------------------------- */
+.wp-block-code,
+.wp-block-preformatted,
+.wp-block-code code,
+.wp-block-preformatted pre,
+pre.wp-block-code,
+pre.wp-block-preformatted {
+	background: var(--theme-bg-alt);
+	background-color: var(--theme-bg-alt);
+	color: var(--theme-primary);
+}
+
 .wp-block-code code,
 .wp-block-preformatted pre {
-	color: var(--theme-primary);
 	text-shadow: 0 0 2px var(--theme-glow-subtle);
+}
+
+/* Inline code within paragraphs and other blocks */
+:not(pre) > code {
+	background: var(--theme-bg-alt);
+	color: var(--theme-primary);
+	padding: 0.1em 0.3em;
+	border-radius: var(--radius-sm);
+	font-family: var(--wp--preset--font-family--monospace);
+	font-size: 0.9em;
 }
 
 /* ----------------------------------------

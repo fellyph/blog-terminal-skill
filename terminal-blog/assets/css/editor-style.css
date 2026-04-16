@@ -27,10 +27,22 @@
 /* ----------------------------------------
    Code Block Styling
    ---------------------------------------- */
+.editor-styles-wrapper .wp-block-code,
+.editor-styles-wrapper .wp-block-preformatted,
 .editor-styles-wrapper .wp-block-code code,
-.editor-styles-wrapper .wp-block-preformatted pre {
+.editor-styles-wrapper .wp-block-preformatted pre,
+.editor-styles-wrapper pre.wp-block-code,
+.editor-styles-wrapper pre.wp-block-preformatted {
 	color: var(--wp--preset--color--primary, #5bec13);
 	background: var(--wp--preset--color--background-alt, #0a0f09);
+	background-color: var(--wp--preset--color--background-alt, #0a0f09);
+}
+
+.editor-styles-wrapper :not(pre) > code {
+	color: var(--wp--preset--color--primary, #5bec13);
+	background: var(--wp--preset--color--background-alt, #0a0f09);
+	padding: 0.1em 0.3em;
+	border-radius: 0.125rem;
 }
 
 /* ----------------------------------------
